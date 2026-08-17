@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imuniza+ | Postos de Saúde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="postos.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <div class="logo-badge">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5V11C4 16.5 7.4 21.2 12 22.5C16.6 21.2 20 16.5 20 11V5L12 2Z" stroke="white" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12L11 14L15.5 9.5" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="names">
+        <strong>Imuniza+</strong>
+        <span>Gestão de Vacinação</span>
+      </div>
+    </div>
+
+    <div class="sb-label">MENU PRINCIPAL</div>
+    <nav class="sb-nav">
+      <a class="sb-item" href="/Dashboard/dashboard.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+        Dashboard
+      </a>
+      <a class="sb-item" href="/Carteira/carteira.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5c-.8 0-1.5-.7-1.5-1.5v-13z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5c.8 0 1.5-.7 1.5-1.5v-13z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Carteira Completa
+      </a>
+      <a class="sb-item" href="/Calendario/calendario.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Calendário Vacinal
+      </a>
+      <a class="sb-item active" href="/Postos/postos.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" stroke="currentColor" stroke-width="1.6"/></svg>
+        Postos de Saúde
+      </a>
+    </nav>
+
+    <div class="sb-label">CONTA</div>
+    <nav class="sb-nav">
+      <a class="sb-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="8" r="2.4" stroke="currentColor" stroke-width="1.5"/><path d="M15.5 14.3c2.7.3 4.8 2.6 4.8 5.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Perfis Familiares
+      </a>
+      <a class="sb-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.6 1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        Configurações
+      </a>
+    </nav>
+
+    <div class="sb-spacer"></div>
+
+    <div class="sb-ods">
+      <div class="ico">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18" stroke="currentColor" stroke-width="1.4"/></svg>
+      </div>
+      <div>
+        <strong>ODS 3 · ONU</strong>
+        <span>Este app promove a saúde e o bem-estar para todos, em todas as idades.</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="topbar">
+      <h1>Postos de Saúde</h1>
+      <div class="topbar-right">
+        <div class="account-ico" title="Minha conta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <a href="/Login v2/login.html" class="btn-logout" id="logoutBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Sair
+        </a>
+      </div>
+    </div>
+
+    <!-- toolbar row -->
+    <div class="toolbar-row">
+      <div class="search-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar por bairro ou nome do posto...">
+      </div>
+      <button class="toolbar-pill active" id="abertosPill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Abertos agora
+      </button>
+      <button class="toolbar-pill" id="vacinaPill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M6 6v13a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Vacina Específica
+      </button>
+      <button class="toolbar-pill" id="mapaPill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 3l6 2 6-2v15l-6 2-6-2-6 2V5l6-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 3v15M15 5v15" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Ver no Mapa
+      </button>
+    </div>
+
+    <!-- grid -->
+    <div class="postos-grid">
+      <div class="left-col">
+        <!-- featured card -->
+        <div class="featured-card">
+          <div class="phone-wrap">
+            <div class="nearest-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 22l8-4 8 4L12 2z" stroke="white" stroke-width="1.6" stroke-linejoin="round" fill="white"/></svg>
+              Mais Próximo (0.8 km)
+            </div>
+            <div class="phone-mock">
+              <div class="map-fake">
+                <div class="road h1"></div>
+                <div class="road h2"></div>
+                <div class="road v1"></div>
+                <div class="pin p1"></div>
+                <div class="pin p2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-info">
+            <div class="fi-top">
+              <h3>UBS Vila Mariana</h3>
+              <span class="status-badge open"><span class="dot"></span>Aberto</span>
+            </div>
+            <div class="fi-address">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" stroke="currentColor" stroke-width="1.6"/></svg>
+              R. Domingos de Morais, 1500 - Vila Mariana, São Paulo - SP
+            </div>
+
+            <div class="info-box-row">
+              <div class="info-box">
+                <div class="lbl">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  Horário
+                </div>
+                <div class="val">07:00 às 19:00</div>
+              </div>
+              <div class="info-box">
+                <div class="lbl">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M6 6v13a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                  Disponibilidade
+                </div>
+                <div class="val">Alta (COVID, Gripe)</div>
+              </div>
+            </div>
+
+            <div class="fi-actions">
+              <button class="btn-outline">Detalhes</button>
+              <button class="btn-solid btn-como-chegar" data-address="R. Domingos de Morais, 1500 - Vila Mariana, São Paulo - SP">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 11l18-8-8 18-2-8-8-2z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                Como Chegar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- UBS Aclimação -->
+        <div class="posto-card">
+          <div class="pc-top">
+            <h3>UBS Aclimação</h3>
+            <span class="status-badge closed-soon"><span class="dot"></span>Fecha às 17h</span>
+          </div>
+          <div class="pc-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" stroke="currentColor" stroke-width="1.6"/></svg>
+            R. Muniz de Sousa, 100 - Aclimação
+          </div>
+          <div class="pc-meta-row">
+            <span class="dist">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="17" r="1.6" fill="currentColor"/><circle cx="17" cy="17" r="1.6" fill="currentColor"/></svg>
+              2.2 km
+            </span>
+            <span>08:00 às 17:00</span>
+          </div>
+          <div class="queue-track"><div class="queue-fill moderate"></div></div>
+          <div class="queue-label">Fila estimada: Moderada</div>
+          <button class="btn-tracar" data-address="R. Muniz de Sousa, 100 - Aclimação, São Paulo - SP">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 11l18-8-8 18-2-8-8-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Traçar Rota
+          </button>
+        </div>
+      </div>
+
+      <div class="right-col">
+        <!-- AMA Paraíso -->
+        <div class="posto-card">
+          <div class="pc-top">
+            <h3>AMA Paraíso</h3>
+            <span class="status-badge open"><span class="dot"></span>Aberto</span>
+          </div>
+          <div class="pc-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" stroke="currentColor" stroke-width="1.6"/></svg>
+            R. Vergueiro, 2200 - Vila Mariana
+          </div>
+          <div class="pc-meta-row">
+            <span class="dist">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="17" r="1.6" fill="currentColor"/><circle cx="17" cy="17" r="1.6" fill="currentColor"/></svg>
+              1.5 km
+            </span>
+            <span>07:00 às 22:00</span>
+          </div>
+          <div class="queue-track"><div class="queue-fill short"></div></div>
+          <div class="queue-label">Fila estimada: Curta</div>
+          <button class="btn-tracar" data-address="R. Vergueiro, 2200 - Vila Mariana, São Paulo - SP">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 11l18-8-8 18-2-8-8-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Traçar Rota
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
