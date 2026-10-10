@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imuniza+ | Configurações</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <div class="logo-badge">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5V11C4 16.5 7.4 21.2 12 22.5C16.6 21.2 20 16.5 20 11V5L12 2Z" stroke="white" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12L11 14L15.5 9.5" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="names">
+        <strong>Imuniza+</strong>
+        <span>Gestão de Vacinação</span>
+      </div>
+    </div>
+
+    <div class="sb-label">MENU PRINCIPAL</div>
+    <nav class="sb-nav">
+      <a class="sb-item" href="/Dashboard/dashboard.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+        Dashboard
+      </a>
+      <a class="sb-item" href="/Carteira/carteira.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5c-.8 0-1.5-.7-1.5-1.5v-13z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5c.8 0 1.5-.7 1.5-1.5v-13z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Carteira Completa
+      </a>
+      <a class="sb-item" href="/calendario/calendario.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Calendário Vacinal
+      </a>
+      <a class="sb-item" href="/postos/postos.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" stroke="currentColor" stroke-width="1.6"/></svg>
+        Postos de Saúde
+      </a>
+    </nav>
+
+    <div class="sb-label">CONTA</div>
+    <nav class="sb-nav">
+      <a class="sb-item" href="/perfis/perfis.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="8" r="2.4" stroke="currentColor" stroke-width="1.5"/><path d="M15.5 14.3c2.7.3 4.8 2.6 4.8 5.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Perfis Familiares
+      </a>
+      <a class="sb-item active" href="/configuraçoes/config.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.6 1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        Configurações
+      </a>
+    </nav>
+
+    <div class="sb-spacer"></div>
+
+    <div class="sb-ods">
+      <div class="ico">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18" stroke="currentColor" stroke-width="1.4"/></svg>
+      </div>
+      <div>
+        <strong>ODS 3 · Saúde e Bem-Estar</strong>
+        <span>Este app promove a saúde e o bem-estar para todos, em todas as idades.</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="topbar">
+      <h1>Configurações</h1>
+      <div class="topbar-right">
+        <div class="account-ico" title="Minha conta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <a href="/Login v2/login.html" class="btn-logout" id="logoutBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Sair
+        </a>
+      </div>
+    </div>
+
+    <!-- Dados Pessoais -->
+    <div class="settings-card">
+      <div class="sc-head">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="1.6"/></svg>
+        Dados Pessoais
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" value="João Silva Costa">
+        </div>
+        <div class="field">
+          <label for="cpf">CPF</label>
+          <input type="text" id="cpf" value="123.456.789-00" disabled>
+          <div class="hint">Para alterar o CPF, contate o suporte.</div>
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" value="joao.costa@email.com">
+        </div>
+        <div class="field">
+          <label for="telefone">Telefone (Celular)</label>
+          <input type="text" id="telefone" value="(11) 98765-4321">
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <button class="btn-save" id="saveDataBtn">Salvar Alterações</button>
+      </div>
+    </div>
+
+    <!-- Notificações -->
+    <div class="settings-card">
+      <div class="sc-head">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zM18 16v-5a6 6 0 0 0-4.5-5.8V4a1.5 1.5 0 0 0-3 0v1.2A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        Notificações
+      </div>
+      <div class="sc-desc">Gerencie como você deseja ser lembrado sobre campanhas e datas de vacinação.</div>
+
+      <div class="toggle-row">
+        <div class="tr-text">
+          <strong>Notificações por E-mail</strong>
+          <span>Receba alertas detalhados e boletins de saúde.</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <div class="tr-text">
+          <strong>Alertas via SMS</strong>
+          <span>Avisos curtos para compromissos iminentes.</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" disabled>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <div class="tr-text">
+          <strong>Notificações Push (App)</strong>
+          <span>Alertas em tempo real no seu dispositivo.</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Segurança -->
+    <div class="settings-card">
+      <div class="sc-head">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.6"/></svg>
+        Segurança
+      </div>
+
+      <div class="field" style="margin-bottom:18px;">
+        <label for="senhaAtual">Senha Atual</label>
+        <input type="password" id="senhaAtual" placeholder="">
+      </div>
+      <div class="field" style="margin-bottom:18px;">
+        <label for="novaSenha">Nova Senha</label>
+        <input type="password" id="novaSenha" placeholder="">
+        <div class="hint">Mínimo 8 caracteres, contendo números e letras.</div>
+      </div>
+      <div class="field" style="margin-bottom:20px;">
+        <label for="confirmaSenha">Confirmar Nova Senha</label>
+        <input type="password" id="confirmaSenha" placeholder="">
+      </div>
+
+      <button class="btn-secondary" id="updatePasswordBtn">Atualizar Senha</button>
+    </div>
+
+    <!-- Privacidade -->
+    <div class="settings-card">
+      <div class="sc-head">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+        Privacidade
+      </div>
+
+      <div class="tr-text" style="margin-bottom:0;">
+        <strong>Compartilhamento de Dados para Fins Estatísticos</strong>
+        <span>Permite que o Imuniza+ utilize meus dados de forma anonimizada para auxiliar em estatísticas de saúde pública governamentais.</span>
+      </div>
+
+      <div class="privacy-toggle-row">
+        <label class="switch">
+          <input type="checkbox" id="privacyToggle" checked>
+          <span class="slider"></span>
+        </label>
+        <span class="lbl" id="privacyLabel">Permitido</span>
+      </div>
+
+      <div class="danger-zone">
+        <button class="btn-danger" id="deleteAccountBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6h14z" stroke="#c0392b" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Solicitar Exclusão da Conta
+        </button>
+        <p>Atenção: A exclusão da conta removerá permanentemente seu histórico vacinal digital desta plataforma.</p>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

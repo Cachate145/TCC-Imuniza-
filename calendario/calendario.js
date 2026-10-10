@@ -15,8 +15,3 @@
       }
     });
   });
-
-  // ---- schedule button (placeholder action) ----
-  document.getElementById('agendarBtn').addEventListener('click', () => {
-    alert('Abrindo agendamento de vacinação (ação simulada).');
-  });
