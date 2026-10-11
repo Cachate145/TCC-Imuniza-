@@ -17,12 +17,6 @@
   });
 
   // ---- add profile actions (placeholder) ----
-  document.getElementById('addProfileBtn').addEventListener('click', () => {
-    alert('Abrindo formulário para adicionar novo perfil (ação simulada).');
-  });
-  document.getElementById('addProfileCard').addEventListener('click', () => {
-    alert('Abrindo formulário para adicionar novo perfil (ação simulada).');
-  });
 
   // ---- menu buttons (placeholder) ----
   document.querySelectorAll('.menu-btn').forEach(btn => {
