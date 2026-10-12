@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imuniza+ | Agendamento Confirmado</title>
+<link rel="stylesheet" href="agendamento-confirmado.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="confirm-card">
+    <div class="confirm-hero">
+      <div class="check-badge">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h1>Agendamento Confirmado!</h1>
+      <p>Sua dose de proteção está garantida. Confira os detalhes do seu agendamento abaixo.</p>
+    </div>
+
+    <div class="confirm-body">
+      <div class="details-grid">
+        <div class="detail-card">
+          <div class="detail-head">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 2v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Detalhes da Vacina
+          </div>
+          <div class="detail-row">
+            <span class="lbl">Paciente</span>
+            <span class="val" id="valPatient">—</span>
+          </div>
+          <div class="detail-row">
+            <span class="lbl">Imunizante</span>
+            <span class="val"><span class="vaccine-pill" id="valVaccine">—</span></span>
+          </div>
+          <div class="detail-row">
+            <span class="lbl">Data</span>
+            <span class="val val-with-ico">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span id="valDate">—</span>
+            </span>
+          </div>
+          <div class="detail-row">
+            <span class="lbl">Horário</span>
+            <span class="val val-with-ico">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span id="valTime">—</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-head">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" stroke="currentColor" stroke-width="1.6"/></svg>
+            Local de Atendimento
+          </div>
+          <div class="local-name" id="valPosto">—</div>
+          <div class="local-addr">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span id="valAddress">—</span>
+          </div>
+          <div class="map-box">
+            <div class="map-pin">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="confirm-footer">
+        <div class="footer-left">
+          <button class="btn-outline" id="downloadBtn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 3v12M7 10l5 5 5-5M5 21h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Baixar Comprovante
+          </button>
+          <button class="btn-outline" id="addCalendarBtn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 2v4M16 2v4M12 13v4M10 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            Adicionar ao Calendário
+          </button>
+        </div>
+        <a href="/Dashboard/dashboard.html" class="btn-dashboard">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="white" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="white" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="white" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="white" stroke-width="1.6"/></svg>
+          Retornar ao Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

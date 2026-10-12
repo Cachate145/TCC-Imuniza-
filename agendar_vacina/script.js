@@ -6,7 +6,37 @@
   };
   const memberLabels = {ana:'Ana Silva', lucas:'Lucas Silva', maria:'Maria Costa'};
 
+  // vacinas padrão sugeridas para membros adicionados em "Perfis Familiares"
+  // (ainda sem histórico próprio registrado no sistema)
+  const defaultVaccineOptions = [
+    {v:'flu', l:'Influenza (Gripe)'},
+    {v:'covid', l:'COVID-19 (Reforço Anual)'},
+    {v:'scr', l:'Tríplice Viral (SCR)'}
+  ];
+
+  // ---- carrega membros adicionados em "Adicionar Perfil Familiar" ----
   const memberSelect = document.getElementById('memberSelect');
+
+  function loadFamilyMembersIntoSelect(){
+    let stored = [];
+    try {
+      stored = JSON.parse(localStorage.getItem('imunizaFamilyProfiles')) || [];
+    } catch (err) {
+      stored = [];
+    }
+    stored.forEach(profile => {
+      memberLabels[profile.id] = profile.name;
+      vaccinesByMember[profile.id] = defaultVaccineOptions;
+      const opt = document.createElement('option');
+      opt.value = profile.id;
+      opt.textContent = profile.relationshipLabel
+        ? `${profile.name} (${profile.relationshipLabel})`
+        : profile.name;
+      memberSelect.appendChild(opt);
+    });
+  }
+  loadFamilyMembersIntoSelect();
+
   const vaccineSelect = document.getElementById('vaccineSelect');
   const dateInput = document.getElementById('dateInput');
   const slotsGrid = document.getElementById('slotsGrid');
@@ -116,6 +146,42 @@
 
   confirmBtn.addEventListener('click', () => {
     if (confirmBtn.disabled) return;
+
+    const selectedPatientOption = memberSelect.options[memberSelect.selectedIndex];
+    const selectedVaccineOption = vaccineSelect.options[vaccineSelect.selectedIndex];
+    const selectedPostoCard = document.querySelector('.posto-card.selected');
+    const address = selectedPostoCard ? selectedPostoCard.getAttribute('data-addr') : '';
+
+    const d = new Date(dateInput.value + 'T00:00:00');
+    const dateLabelShort = d.toLocaleDateString('pt-BR', {day:'2-digit', month:'short'});
+    const dateLabelFull = d.toLocaleDateString('pt-BR'); // dd/mm/aaaa
+
+    const appointment = {
+      id: 'ag_' + Date.now(),
+      patientId: memberSelect.value,
+      patientName: selectedPatientOption ? selectedPatientOption.textContent.replace(/\s*\([^)]*\)\s*$/, '').trim() : '',
+      patientFull: selectedPatientOption ? selectedPatientOption.textContent : '',
+      vaccineLabel: selectedVaccineOption ? selectedVaccineOption.textContent : '',
+      posto: selectedPosto,
+      address: address,
+      date: dateInput.value,
+      dateLabel: dateLabelFull,
+      dateLabelShort: dateLabelShort,
+      time: selectedSlot,
+      createdAt: Date.now()
+    };
+
+    // save into the list of appointments shown on "Calendário Vacinal"
+    let appointments = [];
+    try {
+      appointments = JSON.parse(localStorage.getItem('imunizaAppointments')) || [];
+    } catch (err) { appointments = []; }
+    appointments.push(appointment);
+    try { localStorage.setItem('imunizaAppointments', JSON.stringify(appointments)); } catch (err) {}
+
+    // save the last appointment separately, for the confirmation screen
+    try { localStorage.setItem('imunizaLastAppointment', JSON.stringify(appointment)); } catch (err) {}
+
     showToast('Agendamento confirmado com sucesso!');
-    setTimeout(() => { window.location.href = '/calendario/calendario.html'; }, 1100);
+    setTimeout(() => { window.location.href = '/agendamento-confirmado/agendamento-confirmado.html'; }, 700);
   });
