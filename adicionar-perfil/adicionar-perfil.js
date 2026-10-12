@@ -114,10 +114,10 @@
     }
 
     showToast('Perfil familiar adicionado com sucesso!');
-    setTimeout(() => { window.location.href = '/perfis/perfis.html'; }, 900);
+    setTimeout(() => { window.location.href = '../perfis/perfis.html'; }, 900);
   });
 
   // ---- cancel ----
   document.getElementById('cancelBtn').addEventListener('click', () => {
-    window.location.href = '/perfis/perfis.html';
+    window.location.href = '../perfis/perfis.html';
   });

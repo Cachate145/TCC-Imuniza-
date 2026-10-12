@@ -10,10 +10,10 @@
 
   // ---- add profile actions ----
   document.getElementById('addProfileBtn').addEventListener('click', () => {
-    window.location.href = '/add_familiar/add_familiar.html';
+    window.location.href = '../adicionar-perfil/adicionar-perfil.html';
   });
   document.getElementById('addProfileCard').addEventListener('click', () => {
-    window.location.href = '/add_familiar/add_familiar.html';
+    window.location.href = '../adicionar-perfil/adicionar-perfil.html';
   });
 
   // ---- toast feedback ----
@@ -99,7 +99,7 @@
         <span class="status-pill ok">Perfil criado</span>
       </div>
 
-      <button class="btn-ver-carteira" data-target="/Carteira/carteira.html">Ver Carteira</button>
+      <button class="btn-ver-carteira" data-target="../carteira/carteira.html">Ver Carteira</button>
     `;
     return card;
   }

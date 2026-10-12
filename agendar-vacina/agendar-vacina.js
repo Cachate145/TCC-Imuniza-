@@ -183,5 +183,5 @@
     try { localStorage.setItem('imunizaLastAppointment', JSON.stringify(appointment)); } catch (err) {}
 
     showToast('Agendamento confirmado com sucesso!');
-    setTimeout(() => { window.location.href = '/agendamento-confirmado/agendamento-confirmado.html'; }, 700);
+    setTimeout(() => { window.location.href = '../agendamento-confirmado/agendamento-confirmado.html'; }, 700);
   });
