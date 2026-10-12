@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imuniza+ | Central de Ajuda · Perfis Familiares</title>
+<link rel="stylesheet" href="ajuda-perfis.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <div class="logo-badge">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5V11C4 16.5 7.4 21.2 12 22.5C16.6 21.2 20 16.5 20 11V5L12 2Z" stroke="white" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12L11 14L15.5 9.5" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="names">
+        <strong>Imuniza+</strong>
+        <span>Gestão de Vacinação</span>
+      </div>
+    </div>
+
+    <div class="sb-label">MENU PRINCIPAL</div>
+    <nav class="sb-nav">
+      <a class="sb-item" href="/Dashboard/dashboard.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+        Dashboard
+      </a>
+      <a class="sb-item" href="/Carteira/carteira.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5c-.8 0-1.5-.7-1.5-1.5v-13z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5c.8 0 1.5-.7 1.5-1.5v-13z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Carteira completa
+      </a>
+      <a class="sb-item" href="/calendario/calendario.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Calendário de Vacinação
+      </a>
+      <a class="sb-item" href="/postos/postos.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" stroke="currentColor" stroke-width="1.6"/></svg>
+        Postos
+      </a>
+    </nav>
+
+    <div class="sb-label">CONTA</div>
+    <nav class="sb-nav">
+      <a class="sb-item active" href="/perfis/perfis.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="8" r="2.4" stroke="currentColor" stroke-width="1.5"/><path d="M15.5 14.3c2.7.3 4.8 2.6 4.8 5.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Perfis Familiares
+      </a>
+      <a class="sb-item" href="/configuraçoes/config.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.6 1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        Configurações
+      </a>
+    </nav>
+
+    <div class="sb-spacer"></div>
+
+    <div class="sb-ods">
+      <div class="ico">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18" stroke="currentColor" stroke-width="1.4"/></svg>
+      </div>
+      <div>
+        <strong>ODS 3 · ONU</strong>
+        <span>Este app promove a saúde e o bem-estar para todos, em todas as idades.</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="breadcrumb">
+      <a href="/Dashboard/dashboard.html">Central de Ajuda</a>
+      <span class="sep">›</span>
+      <span class="current">Perfis Familiares</span>
+    </div>
+
+    <div class="page-head">
+      <h1>Gerenciamento de Perfis Familiares</h1>
+      <p>Aprenda a centralizar e gerenciar as carteiras de vacinação de toda a sua família em um único lugar, garantindo precisão clínica e acompanhamento adequado para todas as idades e perfis biológicos.</p>
+    </div>
+
+    <div class="top-grid">
+      <!-- Adicionando um Dependente -->
+      <div class="card">
+        <div class="card-head">
+          <div class="ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="8" r="2.4" stroke="currentColor" stroke-width="1.5"/><path d="M15.5 14.3c2.7.3 4.8 2.6 4.8 5.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <h2>Adicionando um Dependente</h2>
+            <p>Adicionar um dependente, seja criança, cônjuge ou idoso, permite que você receba alertas e gerencie o calendário vacinal deles através da sua conta principal.</p>
+          </div>
+        </div>
+
+        <div class="steps-list">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <strong>Acesse a aba 'Perfis Familiares'</strong>
+              <p>No menu lateral esquerdo, clique no ícone de grupo.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <strong>Clique em 'Adicionar Perfil'</strong>
+              <p>Preencha os dados básicos: Nome completo, data de nascimento e relação familiar.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <strong>Configure o Perfil Biológico</strong>
+              <p>Insira o sexo biológico ao nascer. Esta informação é vital para protocolos específicos (ex: vacina HPV).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side stack -->
+      <div class="side-stack">
+        <div class="card">
+          <div class="card-head">
+            <div class="ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 12.5l2.5 2.5L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h2>Benefícios da Centralização</h2>
+          </div>
+          <div class="check-list">
+            <div class="check-item">
+              <span class="tick">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Visão unificada de toda a família em um só painel.
+            </div>
+            <div class="check-item">
+              <span class="tick">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Notificações conjuntas para doses pendentes.
+            </div>
+            <div class="check-item">
+              <span class="tick">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Compartilhamento facilitado com instituições de ensino ou saúde.
+            </div>
+          </div>
+        </div>
+
+        <div class="card info-card">
+          <h3>Por que o sexo biológico importa?</h3>
+          <p>O Imuniza+ utiliza protocolos rigorosos do Ministério da Saúde. O sexo biológico afeta calendários específicos, como as idades indicadas para a vacina do HPV (Papillomavírus Humano), garantindo precisão nas recomendações.</p>
+          <span class="deco">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5V11C4 16.5 7.4 21.2 12 22.5C16.6 21.2 20 16.5 20 11V5L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gerenciando as Carteiras -->
+    <div class="card wallet-card">
+      <div class="card-head">
+        <div class="ico">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5c-.8 0-1.5-.7-1.5-1.5v-13z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5c.8 0 1.5-.7 1.5-1.5v-13z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h2>Gerenciando as Carteiras</h2>
+          <p>Como visualizar e atualizar registros para cada perfil.</p>
+        </div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-card">
+          <div class="ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17 3l4 4-4 4M21 7H9M7 21l-4-4 4-4M3 17h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>Alternar Perfis</strong>
+          <p>Use o menu suspenso no canto superior da tela 'Carteira Completa' para alternar rapidamente entre a sua carteira e as dos seus dependentes.</p>
+        </div>
+
+        <div class="mini-card">
+          <div class="ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 9v4M12 17h.01M10.3 3.9L2.5 17a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>Registrar Doses</strong>
+          <p>Ao registrar uma nova vacina, certifique-se de que o perfil correto está selecionado na aba 'Paciente' do formulário de registro.</p>
+        </div>
+
+        <div class="mini-card">
+          <div class="ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Privacidade</strong>
+          <p>Dependentes adultos (&gt;18 anos) podem solicitar a migração da carteira para uma conta própria independente a qualquer momento.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Help footer -->
+    <div class="help-footer">
+      <h3>Ainda precisa de ajuda?</h3>
+      <p>Nossa equipe de suporte está disponível para auxiliar na configuração dos perfis familiares.</p>
+      <div class="help-actions">
+        <button class="btn-outline" id="faqBtn">Consultar FAQ</button>
+        <button class="btn-solid" id="supportBtn">Falar com Suporte</button>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

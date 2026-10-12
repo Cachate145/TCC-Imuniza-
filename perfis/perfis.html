@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imuniza+ | Perfis Familiares</title>
+<link rel="stylesheet" href="perfis.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="perfis.css">
 </head>
 <body>
 
@@ -89,12 +89,10 @@
         <h2>Gerenciar Familiares</h2>
         <p>Adicione e monitore o status vacinal de seus dependentes, como filhos, cônjuges e idosos, tudo em um só lugar.</p>
       </div>
-      <a href="/add_familiar/add_familiar.html">
         <button class="btn-add-profile" id="addProfileBtn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-3.9 3.1-7 7-7s7 3.1 7 7M17 8v6M14 11h6" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Adicionar Novo Perfil
         </button>
-      </a>
     </div>
 
     <div class="profiles-grid">
@@ -126,7 +124,7 @@
           <span class="status-pill ok">Em dia</span>
         </div>
 
-        <button class="btn-ver-carteira" data-target="carteira.html">Ver Carteira</button>
+        <button class="btn-ver-carteira" data-target="/Carteira/carteira.html">Ver Carteira</button>
       </div>
 
       <!-- Lucas Silva - filho, pendencias -->
@@ -152,7 +150,7 @@
           <span class="status-pill pending">2 Pendências</span>
         </div>
 
-        <button class="btn-ver-carteira" data-target="carteira.html">Ver Carteira</button>
+        <button class="btn-ver-carteira" data-target="/Carteira/carteira.html">Ver Carteira</button>
       </div>
 
       <!-- Maria Costa - mãe -->
@@ -182,14 +180,13 @@
       </div>
 
       <!-- add new profile -->
-      <a href="/add_familiar/add_familiar.html">
         <div class="add-profile-card" id="addProfileCard">
           <div class="add-plus">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
           <strong>Novo Perfil</strong>
-        <span>Adicionar dependente</span>
-      </div>
+          <span>Adicionar dependente</span>
+        </div>
     </div>
   </main>
 

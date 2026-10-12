@@ -1,12 +1,14 @@
   // ---- photo upload preview ----
   const photoInput = document.getElementById('photoInput');
   const photoUpload = document.querySelector('.photo-upload');
+  let photoDataUrl = null;
   photoInput.addEventListener('change', () => {
     const file = photoInput.files[0];
     if (!file) return;
     const reader = new FileReader();
     reader.onload = (e) => {
-      photoUpload.style.backgroundImage = `url(${e.target.result})`;
+      photoDataUrl = e.target.result;
+      photoUpload.style.backgroundImage = `url(${photoDataUrl})`;
       photoUpload.style.backgroundSize = 'cover';
       photoUpload.style.backgroundPosition = 'center';
       photoUpload.innerHTML = '';
@@ -16,10 +18,13 @@
   });
 
   // ---- gender pills ----
+  let selectedGender = '';
   document.querySelectorAll('.gender-pill').forEach(pill => {
     pill.addEventListener('click', () => {
       document.querySelectorAll('.gender-pill').forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
+      selectedGender = pill.getAttribute('data-value');
+      pill.closest('.field-group').querySelector('.field-hint')?.classList.remove('field-error');
     });
   });
 
@@ -46,11 +51,70 @@
     }, 2600);
   }
 
+  // ---- relationship labels ----
+  const relationshipLabels = {
+    'filho': 'Filho(a)',
+    'conjuge': 'Cônjuge',
+    'mae-pai': 'Mãe / Pai',
+    'irmao': 'Irmão(ã)',
+    'avo': 'Avô / Avó',
+    'outro': 'Outro'
+  };
+
+  function calcAge(birthDateStr){
+    if (!birthDateStr) return null;
+    const birth = new Date(birthDateStr + 'T00:00:00');
+    if (isNaN(birth.getTime())) return null;
+    const today = new Date();
+    let age = today.getFullYear() - birth.getFullYear();
+    const m = today.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+    return age;
+  }
+
   // ---- form submit ----
   document.getElementById('addProfileForm').addEventListener('submit', (e) => {
     e.preventDefault();
+
+    if (!selectedGender) {
+      showToast('Selecione o gênero biológico para continuar.');
+      document.getElementById('genderPills').scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    const fullName = document.getElementById('fullName').value.trim();
+    const birthDate = document.getElementById('birthDate').value;
+    const cpf = document.getElementById('cpf').value.trim();
+    const relationship = document.getElementById('relationship').value;
+
+    const profile = {
+      id: 'p_' + Date.now(),
+      name: fullName,
+      birthDate: birthDate,
+      age: calcAge(birthDate),
+      cpf: cpf,
+      relationship: relationship,
+      relationshipLabel: relationshipLabels[relationship] || 'Familiar',
+      gender: selectedGender,
+      photo: photoDataUrl,
+      createdAt: Date.now()
+    };
+
+    let profiles = [];
+    try {
+      profiles = JSON.parse(localStorage.getItem('imunizaFamilyProfiles')) || [];
+    } catch (err) {
+      profiles = [];
+    }
+    profiles.push(profile);
+    try {
+      localStorage.setItem('imunizaFamilyProfiles', JSON.stringify(profiles));
+    } catch (err) {
+      console.warn('Não foi possível salvar o perfil localmente.', err);
+    }
+
     showToast('Perfil familiar adicionado com sucesso!');
-    setTimeout(() => { window.location.href = '/perfis/perfis.html'; }, 1200);
+    setTimeout(() => { window.location.href = '/perfis/perfis.html'; }, 900);
   });
 
   // ---- cancel ----

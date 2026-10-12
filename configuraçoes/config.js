@@ -1,3 +1,39 @@
+  // ---- profile photo upload / preview ----
+  const photoAvatar = document.getElementById('photoAvatar');
+  const profilePhotoInput = document.getElementById('profilePhotoInput');
+  const removePhotoBtn = document.getElementById('removePhotoBtn');
+
+  function renderAvatar(dataUrl){
+    if (dataUrl){
+      photoAvatar.innerHTML = `<img src="${dataUrl}" alt="Foto de perfil">`;
+    } else {
+      photoAvatar.innerHTML = 'JS';
+    }
+  }
+
+  // load previously saved photo, if any
+  try {
+    const savedPhoto = localStorage.getItem('imunizaProfilePhoto');
+    if (savedPhoto) renderAvatar(savedPhoto);
+  } catch (err) {}
+
+  profilePhotoInput.addEventListener('change', () => {
+    const file = profilePhotoInput.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      renderAvatar(e.target.result);
+      try { localStorage.setItem('imunizaProfilePhoto', e.target.result); } catch (err) {}
+    };
+    reader.readAsDataURL(file);
+  });
+
+  removePhotoBtn.addEventListener('click', () => {
+    renderAvatar(null);
+    profilePhotoInput.value = '';
+    try { localStorage.removeItem('imunizaProfilePhoto'); } catch (err) {}
+  });
+
   // ---- sidebar nav active state (visual only, links keep working) ----
   document.querySelectorAll('.sb-item').forEach(item => {
     item.addEventListener('click', (e) => {

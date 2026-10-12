@@ -263,6 +263,21 @@
   .avatar.a1{background:linear-gradient(150deg, #e0728f, #d95c7a);}
   .avatar.a2{background:linear-gradient(150deg, #4f9dd1, #3c86ba);}
   .avatar.a3{background:linear-gradient(150deg, #7a8fa8, #5f7590);}
+  .avatar.a4{background:linear-gradient(150deg, #e0a63f, #cf8f2b);}
+  .avatar.a5{background:linear-gradient(150deg, #178a6b, #0e4a3f);}
+  .avatar.a6{background:linear-gradient(150deg, #9d7fd1, #7a5fd6);}
+  .avatar img{
+    width:100%;height:100%;
+    border-radius:50%;
+    object-fit:cover;
+  }
+
+  .pc-cpf{
+    display:block;
+    font-size:11px;
+    color:var(--muted);
+    margin-top:2px;
+  }
 
   .titular-badge{
     position:absolute;
@@ -347,6 +362,34 @@
   }
   .status-pill.ok{background:#dcf3ea;color:var(--green-700);}
   .status-pill.pending{background:#f8d7d2;color:#c0392b;}
+  .status-pill.neutral{background:#eef2f1;color:#5c6864;}
+  .status-row.neutral{background:#f6f8f7;}
+
+  .avatar img{
+    width:100%;height:100%;
+    border-radius:50%;
+    object-fit:cover;
+  }
+  .avatar.a4{background:linear-gradient(150deg, #cf9b4f, #b9822f);}
+  .avatar.a5{background:linear-gradient(150deg, #6a8f63, #557a4f);}
+  .avatar.a6{background:linear-gradient(150deg, #9168c4, #7a52ab);}
+
+  .remove-btn{
+    width:100%;
+    text-align:center;
+    font-size:11.5px;
+    font-weight:600;
+    color:#b3443a;
+    background:none;
+    border:none;
+    font-family:inherit;
+    cursor:pointer;
+    padding:8px 0 0 0;
+    position:relative;
+    z-index:1;
+    transition:color .15s ease;
+  }
+  .remove-btn:hover{color:#8a3029;text-decoration:underline;}
 
   .btn-ver-carteira{
     width:100%;

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imuniza+ | Configurações</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="config.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -89,6 +89,19 @@
       <div class="sc-head">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="1.6"/></svg>
         Dados Pessoais
+      </div>
+
+      <div class="photo-row">
+        <div class="photo-avatar" id="photoAvatar">JS</div>
+        <div class="photo-actions">
+          <strong>Foto de Perfil</strong>
+          <span>JPG ou PNG, tamanho máximo de 5MB.</span>
+          <div class="photo-btns">
+            <label class="btn-secondary" for="profilePhotoInput" style="cursor:pointer;">Alterar Foto</label>
+            <button type="button" class="btn-text-danger" id="removePhotoBtn">Remover</button>
+          </div>
+          <input type="file" id="profilePhotoInput" accept="image/png, image/jpeg" style="display:none;">
+        </div>
       </div>
 
       <div class="field-grid">
@@ -211,11 +224,30 @@
       </div>
     </div>
 
+    <!-- Ajuda -->
+    <div class="settings-card">
+      <div class="sc-head">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M9.2 9a2.8 2.8 0 1 1 3.9 2.6c-.8.4-1.1 1-1.1 1.9v.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="17" r="0.9" fill="currentColor"/></svg>
+        Ajuda
+      </div>
+
+      <div class="help-row">
+        <div class="tr-text">
+          <strong>Central de Ajuda</strong>
+          <span>Guias passo a passo, perguntas frequentes e categorias de suporte para tirar suas dúvidas sobre o Imuniza+.</span>
+        </div>
+        <a class="btn-help" href="/ajuda/central-ajuda.html">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M9.2 9a2.8 2.8 0 1 1 3.9 2.6c-.8.4-1.1 1-1.1 1.9v.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="17" r="0.9" fill="currentColor"/></svg>
+          Acessar Central de Ajuda
+        </a>
+      </div>
+    </div>
+
   </main>
 
 </div>
 
-<script src="scripts.js"></script>
+<script src="config.js"></script>
 
 </body>
 </html>
