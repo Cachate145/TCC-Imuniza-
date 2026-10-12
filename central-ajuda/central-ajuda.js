@@ -47,7 +47,7 @@
   helpSearch.addEventListener('input', () => {
     const term = helpSearch.value.trim().toLowerCase();
     document.querySelectorAll('.cat-card').forEach(card => {
-      card.style.display = card.textContent.toLowerCase().includes(term) ? '' : 'none';
+      card.style.display = card.textContent.toLowerCase().includes(term) ? '' : '/privacidade_e_segurança/index.html';
     });
     document.querySelectorAll('.faq-item').forEach(item => {
       item.style.display = item.textContent.toLowerCase().includes(term) ? '' : 'none';

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imuniza+ - Primeiros Passos</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navegação Superior -->
+        <div class="navbar">
+            <a href="/central-ajuda/central-ajuda.html">
+                <div class="nav-left" id="back-btn" title="Voltar">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Central de Ajuda</span>
+                </div>
+            </a>
+            <div class="nav-right">
+                <span>Imuniza+</span>
+            </div>
+        </div>
+
+        <!-- Seção do Título -->
+        <div class="header-section">
+            <h1 class="title">Primeiros Passos</h1>
+            <p class="subtitle">Bem-vindo ao Imuniza+. Este guia rápido ajudará você a configurar sua conta e começar a gerenciar sua saúde com precisão.</p>
+        </div>
+
+        <!-- Cards de Primeiros Passos -->
+        <div class="grid-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-icon teal">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <h3 class="card-title">1. Criar Conta</h3>
+                <p class="card-text">Acesse a página de registro e insira seus dados básicos de identificação civil.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-icon teal-light">
+                    <i class="fa-solid fa-user-gear"></i>
+                </div>
+                <h3 class="card-title">2. Perfil de Saúde</h3>
+                <p class="card-text">Complete seu perfil com informações médicas vitais para recomendações precisas.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-icon orange">
+                    <i class="fa-solid fa-syringe"></i>
+                </div>
+                <h3 class="card-title">3. Status Vacinal</h3>
+                <p class="card-text">Acesse seu painel para visualizar o histórico e as próximas doses recomendadas.</p>
+            </div>
+        </div>
+
+        <!-- Seção de Dúvidas Comuns (Acordeão) -->
+        <div class="faq-section">
+            <h3 class="faq-title">Dúvidas Comuns</h3>
+            <div class="accordion-list">
+                
+                <!-- Item 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Como adicionar dependentes?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        Para adicionar dependentes, navegue até a aba 'Perfil' no menu superior, selecione a seção 'Dependentes' e clique no botão de adição para registrar os dados do familiar.
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Onde encontro minha carteira completa?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        Sua carteira de vacinação digital completa fica disponível diretamente na página inicial do painel do usuário, com o histórico cronológico de todas as doses aplicadas.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Rodapé / Botão de Suporte -->
+        <div class="support-footer">
+            <button id="support-btn" class="support-btn">
+                <i class="fa-solid fa-headset"></i> Falar com Suporte
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript para Interatividade e Ações -->
+    <script src="script.js"></script>
+</body>
+</html>

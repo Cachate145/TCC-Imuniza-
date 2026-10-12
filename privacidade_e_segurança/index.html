@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imuniza+ - Privacidade e Segurança</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navegação Superior -->
+        <div class="navbar">
+            <a href="/central-ajuda/central-ajuda.html">
+            <div class="nav-left">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Imuniza+</span>
+            </div>
+            </a>
+            <div class="nav-right">
+                <a href="/central-ajuda/central-ajuda.html">
+                    <div class="nav-icon" title="Ajuda"><i class="fa-solid fa-question"></i></div>
+                </a>
+                <a href="/config/config.html">
+                    <div class="nav-icon" title="Perfil"><i class="fa-solid fa-user"></i></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Seção do Título -->
+        <div class="header-section">
+            <div class="category">Central de Ajuda</div>
+            <h1 class="title">Privacidade e Segurança</h1>
+            <p class="subtitle">Seus dados de saúde são sensíveis e pertencem exclusivamente a você. No Imuniza+, implementamos protocolos de segurança de nível clínico para garantir que suas informações de vacinação permaneçam confidenciais e protegidas.</p>
+        </div>
+
+        <!-- Cards de Conteúdo -->
+        <div class="grid-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="card-title">Criptografia de Ponta a Ponta</h3>
+                <p class="card-text">Todos os seus dados médicos e históricos de vacinas são criptografados tanto em trânsito quanto em repouso. Utilizamos padrões AES-256, os mesmos empregados por instituições financeiras globais, garantindo que apenas você e profissionais autorizados possam acessar suas informações.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="card-title">Conformidade Legal</h3>
+                <p class="card-text">Operamos em estrita conformidade com a Lei Geral de Proteção de Dados (LGPD) e diretrizes internacionais de saúde (como HIPAA). Não comercializamos seus dados. O uso das informações é estritamente limitado à otimização da sua precisão vacinal.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-user-gear"></i>
+                </div>
+                <h3 class="card-title">Gerenciamento de Permissões</h3>
+                <p class="card-text">Você tem controle absoluto sobre quem visualiza sua caderneta. Através da aba 'Configurações > Permissões', você pode conceder ou revogar acesso temporário a médicos, centros de saúde ou membros da família a qualquer momento.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-shield-virus"></i>
+                </div>
+                <h3 class="card-title">Dicas de Segurança da Conta</h3>
+                <ul class="card-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Ative a Autenticação de Dois Fatores (2FA).</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Use senhas fortes e exclusivas para o portal de saúde.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Mantenha seu aplicativo sempre atualizado.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Banner de Suporte (Rodapé) -->
+        <div class="support-banner">
+            <div class="support-info">
+                <h3>Dúvidas sobre seus dados?</h3>
+                <p>Nossa equipe de suporte técnico e jurídico está à disposição para esclarecer qualquer aspecto sobre a privacidade do seu prontuário imunológico.</p>
+            </div>
+            <button id="support-btn" class="support-btn">
+                <i class="fa-regular fa-envelope"></i> Contatar Suporte de Dados
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript para Envio de E-mail -->
+    <script src="script.js"></script>
+</body>
+</html>
