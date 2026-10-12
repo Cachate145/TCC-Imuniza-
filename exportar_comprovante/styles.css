@@ -1,0 +1,256 @@
+/* ===================== tokens de cor ===================== */
+:root {
+  --background: oklch(0.981 0.005 240);
+  --foreground: oklch(0.185 0.017 175);
+  --card: oklch(1 0 0);
+  --primary: oklch(0.678 0.121 180);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.937 0.014 170);
+  --secondary-foreground: oklch(0.345 0.065 174);
+  --muted: oklch(0.978 0.005 220);
+  --muted-foreground: oklch(0.473 0.017 175);
+  --accent: oklch(0.931 0.026 172);
+  --destructive: oklch(0.57 0.225 27);
+  --border: oklch(0.862 0.014 185);
+  --sidebar-background: oklch(0.989 0.004 200);
+  --sidebar-label: oklch(0.65 0.017 200);
+  --rule: oklch(0.93 0.014 235);
+  --badge-background: oklch(0.916 0.058 178);
+  --badge-foreground: oklch(0.585 0.103 181);
+  --qr: oklch(0.666 0.065 179);
+  --ods-background: oklch(0.955 0.021 295);
+  --ods-border: oklch(0.899 0.034 295);
+  --ods-icon: oklch(0.566 0.186 285);
+  --document-shadow: 0 8px 22px oklch(0.3 0.02 180 / 0.035);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+}
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font-family: inherit; cursor: pointer; }
+.icon { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+/* ===================== botões ===================== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 36px; padding: 0 14px; border: 0; border-radius: 6px;
+  font-size: 14px; font-weight: 500; background: transparent; color: inherit;
+  transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+}
+.btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.btn.primary { background: var(--primary); color: var(--primary-foreground); }
+.btn.secondary { background: var(--secondary); color: var(--secondary-foreground); }
+.btn.ghost:hover { background: var(--accent); }
+.btn.icon { width: 36px; padding: 0; }
+.btn:disabled { opacity: .65; cursor: default; }
+
+/* ===================== estrutura ===================== */
+.app-shell { min-height: 100dvh; }
+
+/* ===================== menu lateral ===================== */
+.sidebar {
+  width: 255px; position: fixed; inset: 0 auto 0 0; z-index: 30;
+  background: var(--sidebar-background); border-right: 1px solid var(--rule);
+  display: flex; flex-direction: column; padding: 31px 20px 25px;
+  animation: slide-in-left .5s cubic-bezier(.22,.9,.3,1) both;
+}
+.brand { display: flex; align-items: center; gap: 12px; padding: 0 8px; animation: rise-in .5s .05s ease both; }
+.brand-mark {
+  width: 38px; height: 39px; border-radius: 11px; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--secondary-foreground), var(--primary));
+  color: var(--primary-foreground); border: 1px solid var(--secondary-foreground);
+}
+.brand-mark .icon { width: 21px; height: 21px; stroke-width: 1.6; }
+.brand-name { font-size: 19px; line-height: 23px; font-weight: 700; }
+.brand-caption { font-size: 12px; line-height: 16px; color: var(--muted-foreground); }
+.menu-group { margin-top: 42px; }
+.menu-group.account { margin-top: 22px; }
+.menu-label { color: var(--sidebar-label); font-size: 12px; font-weight: 700; padding: 0 10px; margin: 0 0 10px; letter-spacing: .5px; }
+.nav-item {
+  width: 100%; height: 41px; display: flex; align-items: center; justify-content: flex-start; gap: 13px;
+  padding: 0 13px; font-size: 15.5px; border-radius: 11px; margin-bottom: 1px;
+  background: transparent; border: 0; color: var(--foreground);
+  transition: background .2s, transform .2s, color .2s, font-weight .2s;
+  animation: item-in .45s ease both;
+}
+.nav-item:nth-of-type(1) { animation-delay: .12s; }
+.nav-item:nth-of-type(2) { animation-delay: .18s; }
+.nav-item:nth-of-type(3) { animation-delay: .24s; }
+.nav-item:nth-of-type(4) { animation-delay: .30s; }
+.nav-item .icon { height: 17px; width: 17px; stroke-width: 1.3; }
+.nav-item:hover { background: var(--muted); transform: translateX(3px); }
+.nav-item.active { background: var(--accent); color: var(--secondary-foreground); font-weight: 700; }
+.ods {
+  margin-top: auto; background: var(--ods-background); border: 1px solid var(--ods-border);
+  border-radius: 14px; padding: 16px; display: flex; gap: 11px;
+  animation: rise-in .5s .4s ease both;
+}
+.ods-symbol { flex: 0 0 31px; height: 31px; border-radius: 10px; color: var(--ods-icon); background: var(--card); display: grid; place-items: center; }
+.ods-symbol .icon { height: 15px; width: 15px; stroke-width: 1.4; }
+.ods strong { font-size: 14px; line-height: 19px; }
+.ods p { color: var(--muted-foreground); font-size: 12.5px; line-height: 19px; margin: 2px 0 0; }
+.scrim { position: fixed; inset: 0; z-index: 25; background: oklch(0.2 0 0 / .35); animation: fade-in .2s ease both; }
+
+/* ===================== topo ===================== */
+.main { margin-left: 255px; }
+.topbar {
+  height: 65px; border-bottom: 1px solid var(--border);
+  background: color-mix(in oklch, var(--secondary) 30%, var(--card));
+  display: flex; align-items: center; justify-content: space-between; padding: 0 28px;
+  animation: fade-down .5s .1s ease both;
+}
+.topbar h1 { font-size: 20px; color: var(--secondary-foreground); font-weight: 700; margin: 0; }
+.topbar-actions { display: flex; gap: 10px; }
+.topbar-actions .icon { stroke-width: 1.7; }
+.pop-wrap { position: relative; }
+.popover {
+  position: absolute; top: 44px; right: 0; width: 270px; padding: 16px; z-index: 40;
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  box-shadow: 0 10px 30px oklch(0.2 0 0 / .12); font-size: 13px; line-height: 20px;
+  animation: pop-in .18s ease-out both;
+}
+.popover p { margin: 5px 0 0; color: var(--muted-foreground); }
+
+/* ===================== conteúdo ===================== */
+.export-layout {
+  max-width: 1200px; margin: 0 auto; padding: 26px 28px 48px;
+  display: grid; grid-template-columns: minmax(0, 1fr) 282px; gap: 24px; align-items: start;
+}
+.certificate {
+  border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: var(--card);
+  box-shadow: var(--document-shadow); animation: rise-in .6s ease both;
+}
+.certificate-header {
+  background: var(--primary); display: flex; justify-content: space-between; align-items: center;
+  padding: 30px 28px; min-height: 120px; color: var(--secondary-foreground);
+}
+.certificate-header h2 { font-size: 30px; line-height: 36px; font-weight: 700; margin: 0; animation: rise-in .6s .12s ease both; }
+.certificate-header p { margin: 1px 0 0; font-size: 14px; color: var(--foreground); animation: rise-in .6s .18s ease both; }
+.issue-date { text-align: right; flex-shrink: 0; padding-left: 16px; }
+.issue-date span { display: block; font-size: 12px; margin-bottom: 5px; }
+.issue-date strong { font-size: 14px; font-weight: 500; color: var(--foreground); }
+.patient { padding: 30px 28px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--rule); min-height: 173px; }
+.eyebrow { font-size: 10px; letter-spacing: .7px; margin: 0 0 8px; }
+.patient h3 { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+.patient-data { font-size: 13px; line-height: 21px; color: var(--muted-foreground); margin: 0; }
+.qr-frame {
+  flex-shrink: 0; height: 105px; width: 105px; border-radius: 6px;
+  border: 1.5px solid var(--secondary-foreground); background: var(--muted);
+  display: grid; place-items: center; margin-left: 12px;
+  animation: pop-in .45s .45s cubic-bezier(.34,1.56,.64,1) both;
+}
+.qr-frame canvas { width: 47px; height: 47px; image-rendering: pixelated; }
+.immunizations { padding: 29px 28px 28px; }
+.immunizations h3 { font-size: 17px; margin: 0 0 22px; padding-bottom: 11px; border-bottom: 1px solid var(--rule); font-weight: 600; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; text-align: left; white-space: nowrap; font-size: 13px; }
+th { font-size: 11px; font-weight: 400; padding: 10px 6px 14px; }
+td { border-top: 1px solid var(--rule); padding: 17px 6px; }
+tr:last-child td { border-bottom: 1px solid var(--rule); }
+tbody tr { animation: row-in .45s ease both; }
+tbody tr:nth-child(1) { animation-delay: .35s; }
+tbody tr:nth-child(2) { animation-delay: .45s; }
+tbody tr:nth-child(3) { animation-delay: .55s; }
+.dose { display: inline-block; background: var(--badge-background); color: var(--badge-foreground); border-radius: 12px; padding: 3px 7px; font-size: 10px; line-height: 13px; }
+.certificate-footer { background: var(--muted); border-top: 1px solid var(--rule); padding: 29px 28px; display: flex; justify-content: space-between; align-items: flex-end; gap: 15px; }
+.certificate-footer p { margin: 0 0 6px; font-size: 10px; }
+.certificate-footer strong { font-size: 13px; font-weight: 500; }
+.authentication { font-size: 9px; }
+.signature-mark {
+  display: block; width: 34px; height: 34px; margin-bottom: 8px; overflow: hidden;
+  background: repeating-linear-gradient(150deg, var(--muted-foreground) 0 2px, var(--qr) 2px 3px, var(--secondary-foreground) 3px 6px);
+  animation: draw .7s .6s ease both;
+}
+
+/* ===================== painel lateral de exportação ===================== */
+.export-options {
+  margin-top: 85px; background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 24px 22px 22px; animation: rise-in .6s .13s ease both;
+}
+.export-options h2 { font-size: 17px; font-weight: 600; margin: 0 0 8px; }
+.export-options > p { font-size: 13px; line-height: 21px; color: var(--muted-foreground); margin: 0 0 25px; }
+#actions.swap { animation: swap-in .35s ease both; }
+.export-button { width: 100%; height: 39px; font-size: 12px; margin-bottom: 12px; box-shadow: none; }
+.export-button:hover { transform: translateY(-2px); box-shadow: var(--document-shadow); }
+.print-button { border: 1px solid var(--border); color: var(--foreground); }
+.cancel-button { color: var(--destructive); display: flex; margin: 15px auto 26px; font-size: 12px; }
+.error { color: var(--destructive); font-size: 12px; margin: 0 0 14px; animation: shake .3s ease both; }
+.spin { animation: spin 1s linear infinite; }
+.legal-note {
+  border: 1px solid var(--border); border-radius: 6px; padding: 14px 12px;
+  background: color-mix(in oklch, var(--secondary) 65%, var(--card));
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.legal-note .icon { width: 17px; height: 17px; color: var(--secondary-foreground); }
+.legal-note p { font-size: 10px; line-height: 13px; margin: 0; }
+
+/* ===================== animações ===================== */
+@keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes item-in { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slide-in-left { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fade-down { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop-in { from { opacity: 0; transform: scale(.9) translateY(-4px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes row-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes swap-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+
+/* ===================== responsivo ===================== */
+@media (min-width: 1500px) { .export-layout { padding-top: 35px; } }
+@media (max-width: 1120px) {
+  .export-layout { gap: 20px; padding: 22px 20px; grid-template-columns: minmax(0, 1fr) 250px; }
+  .certificate-header, .patient, .immunizations, .certificate-footer { padding-left: 23px; padding-right: 23px; }
+  table { font-size: 12px; }
+  td { padding-left: 4px; padding-right: 4px; }
+  .export-options { padding: 22px 18px; }
+}
+@media (max-width: 1000px) {
+  .export-layout { grid-template-columns: 1fr; max-width: 720px; }
+  .export-options { margin-top: 0; }
+}
+@media (max-width: 700px) {
+  .sidebar { transform: translateX(-100%); transition: transform .25s ease; animation: none; }
+  .sidebar.open { transform: translateX(0); box-shadow: 10px 0 30px oklch(0.2 0 0 / .12); }
+  .main { margin-left: 0; }
+  .mobile-menu { display: inline-flex; }
+  .topbar { padding: 0 12px; gap: 8px; }
+  .topbar h1 { font-size: 17px; margin-right: auto; }
+  .topbar-actions { gap: 0; }
+  .export-layout { padding: 20px 14px 30px; }
+  .certificate-header { padding: 22px 18px; }
+  .certificate-header h2 { font-size: 25px; }
+  .certificate-header p { font-size: 11px; }
+  .issue-date span { font-size: 10px; }
+  .issue-date strong { font-size: 12px; }
+  .patient { padding: 25px 18px; }
+  .qr-frame { width: 75px; height: 80px; }
+  .patient h3 { font-size: 18px; }
+  .patient-data { font-size: 11px; }
+  .immunizations { padding: 24px 16px; }
+  .certificate-footer { padding: 23px 18px; }
+  .certificate-footer strong { font-size: 11px; }
+  .authentication { font-size: 8px; }
+}
+@media (min-width: 701px) { .mobile-menu { display: none; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+@media print {
+  .sidebar, .topbar, .export-options, .scrim { display: none !important; }
+  .main { margin: 0; }
+  .export-layout { display: block; padding: 0; max-width: none; }
+  .certificate { box-shadow: none; animation: none; border: 1px solid var(--border); }
+  body { background: var(--card); }
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+
+a { 
+  text-decoration: none; 
+  color: inherit; 
+}

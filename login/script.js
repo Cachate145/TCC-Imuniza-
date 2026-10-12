@@ -1,4 +1,4 @@
-// ---- CPF mask ----
+  // ---- CPF mask ----
   const cpfInput = document.getElementById('cpf');
   cpfInput.addEventListener('input', () => {
     let v = cpfInput.value.replace(/\D/g, '').slice(0, 11);
@@ -37,10 +37,6 @@
   }
 
   // ---- "Entrar na conta" link click ----
-  // O link já possui um href (veja o atributo href na tag <a id="submitBtn">
-  // no HTML) para onde o navegador será redirecionado. Aqui apenas validamos
-  // os campos antes de deixar a navegação acontecer; se algo estiver
-  // inválido, cancelamos o redirecionamento com preventDefault().
   const submitBtn = document.getElementById('submitBtn');
   const cpfField = document.getElementById('cpfField');
   const senhaField = document.getElementById('senhaField');
@@ -63,19 +59,14 @@
     }
 
     if (!valid) {
-      e.preventDefault(); // impede a navegação enquanto houver erro
+      e.preventDefault();
       return;
     }
 
-    // Campos válidos: mostra um estado breve de "carregando" e então
-    // deixa o navegador seguir o href normalmente (redirecionamento real).
     submitBtn.classList.add('is-disabled');
     submitBtn.innerHTML = 'Entrando...';
-    // Não é necessário chamar e.preventDefault() aqui — o link navega
-    // normalmente para o href definido na tag <a>.
   });
 
-  // clear error state as user types
   cpfInput.addEventListener('input', () => cpfField.classList.remove('has-error'));
   senhaInput.addEventListener('input', () => senhaField.classList.remove('has-error'));
 

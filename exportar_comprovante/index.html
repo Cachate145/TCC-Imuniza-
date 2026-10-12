@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exportar Comprovante | Imuniza+</title>
+  <meta name="description" content="Visualize e exporte o comprovante de vacinação de Carlos Mendes no Imuniza+." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== ícones (sprites reutilizáveis) ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1" /><rect width="7" height="7" x="14" y="3" rx="1" /><rect width="7" height="7" x="14" y="14" rx="1" /><rect width="7" height="7" x="3" y="14" rx="1" /></symbol>
+      <symbol id="i-panels" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /><path d="M8 14h.01" /><path d="M12 14h.01" /><path d="M16 14h.01" /><path d="M8 18h.01" /><path d="M12 18h.01" /><path d="M16 18h.01" /></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M18 21a8 8 0 0 0-16 0" /><circle cx="10" cy="8" r="5" /><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" /></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx="12" cy="10" r="4" /><circle cx="12" cy="12" r="10" /></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3" /><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /></symbol>
+      <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" /><rect x="6" y="14" width="12" height="8" rx="1" /></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" /></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></symbol>
+      <symbol id="i-loader" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></symbol>
+    </defs>
+  </svg>
+
+  <div class="app-shell">
+    <!-- ===== menu lateral (igual ao 1º print) ===== -->
+    <aside class="sidebar" id="sidebar" aria-label="Menu principal">
+      <div class="brand">
+        <div class="brand-mark"><svg class="icon"><use href="#i-shield" /></svg></div>
+        <div>
+          <div class="brand-name">Imuniza+</div>
+          <div class="brand-caption">Gestão de Vacinação</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navegação">
+        <div class="menu-group">
+          <p class="menu-label">MENU PRINCIPAL</p>
+          <a href="/dashboard/dashboard.html">
+            <button class="nav-item active" data-label="Dashboard"><svg class="icon"><use href="#i-grid" /></svg>Dashboard</button>
+          </a>
+
+          <a href="/carteira/carteira.html">
+            <button class="nav-item" data-label="Carteira Completa"><svg class="icon"><use href="#i-panels" /></svg>Carteira Completa</button>
+          </a>
+
+          <a href="/calendario/calendario.html">
+            <button class="nav-item" data-label="Calendário Vacinal"><svg class="icon"><use href="#i-calendar" /></svg>Calendário Vacinal</button>
+          </a>
+
+          <a href="/postos/postos.html">
+            <button class="nav-item" data-label="Postos de Saúde"><svg class="icon"><use href="#i-pin" /></svg>Postos de Saúde</button>
+          </a>
+        </div>
+        <div class="menu-group account">
+          <p class="menu-label">CONTA</p>
+          <a href="/perfis/perfis.html">
+            <button class="nav-item" data-label="Perfis Familiares"><svg class="icon"><use href="#i-users" /></svg>Perfis Familiares</button>
+          </a>
+
+          <a href="/config/config.html">
+            <button class="nav-item" data-label="Configurações"><svg class="icon"><use href="#i-settings" /></svg>Configurações</button>
+          </a>
+        </div>
+      </nav>
+
+      <div class="ods">
+        <div class="ods-symbol"><svg class="icon"><use href="#i-globe" /></svg></div>
+        <div>
+          <strong>ODS 3 · ONU</strong>
+          <p>Este app promove a saúde e o bem-estar para todos, em todas as idades.</p>
+        </div>
+      </div>
+    </aside>
+    <div class="scrim" id="scrim" hidden></div>
+
+    <main class="main">
+      <!-- ===== barra do topo ===== -->
+      <header class="topbar">
+        <button class="btn ghost icon mobile-menu" id="menuToggle" aria-label="Abrir menu">
+          <svg class="icon"><use href="#i-menu" /></svg>
+        </button>
+        <h1 id="pageTitle">Exportar Comprovante</h1>
+        <div class="topbar-actions">
+          <div class="pop-wrap">
+            <button class="btn ghost icon" id="bellBtn" aria-label="Notificações" aria-expanded="false" title="Notificações">
+              <svg class="icon"><use href="#i-bell" /></svg>
+            </button>
+            <div class="popover" id="bellPop" hidden>
+              <strong>Notificações</strong>
+              <p>Nenhuma nova notificação.</p>
+            </div>
+          </div>
+          <div class="pop-wrap">
+            <button class="btn ghost icon" id="userBtn" aria-label="Perfil de Carlos Mendes" aria-expanded="false" title="Meu perfil">
+              <svg class="icon"><use href="#i-user" /></svg>
+            </button>
+            <div class="popover" id="userPop" hidden>
+              <strong>Carlos Mendes</strong>
+              <p>Data de nascimento: 15/04/1985<br />CNS: 123 4567 8901 2345</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="export-layout">
+        <!-- ===== comprovante ===== -->
+        <article class="certificate" aria-label="Comprovante de vacinação de Carlos Mendes">
+          <header class="certificate-header">
+            <div>
+              <h2>Imuniza+</h2>
+              <p>Certificado Nacional de Vacinação</p>
+            </div>
+            <div class="issue-date"><span>Data de Emissão</span><strong>12 Nov 2024</strong></div>
+          </header>
+
+          <section class="patient">
+            <div>
+              <p class="eyebrow">PACIENTE</p>
+              <h3>Carlos Mendes</h3>
+              <p class="patient-data">Data de Nasc: 15/04/1985<br />CNS: 123 4567 8901 2345</p>
+            </div>
+            <div class="qr-frame"><canvas id="qr" width="92" height="92" role="img" aria-label="Código QR do comprovante demonstrativo" /></div>
+          </section>
+
+          <section class="immunizations">
+            <h3>Registro de Imunizações</h3>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th scope="col">Vacina</th><th scope="col">Dose</th><th scope="col">Data</th><th scope="col">Lote</th><th scope="col">Unidade</th></tr>
+                </thead>
+                <tbody id="rows"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <footer class="certificate-footer">
+            <div>
+              <p>Documento Assinado Digitalmente</p>
+              <strong>Ministério da Saúde - SUS</strong>
+            </div>
+            <div class="authentication"><span class="signature-mark" aria-hidden="true" />Autenticação: 8f92-a1b2-c3d4</div>
+          </footer>
+        </article>
+
+        <!-- ===== painel de exportação ===== -->
+        <section class="export-options" id="exportPanel" aria-label="Opções de exportação">
+          <h2 id="panelTitle">Opções de Exportação</h2>
+          <p id="panelText">Escolha como deseja salvar o comprovante vacinal de Carlos Mendes.</p>
+
+          <div id="actions">
+            <button class="btn primary export-button" id="downloadBtn">
+              <svg class="icon"><use href="#i-download" /></svg>Download PDF
+            </button>
+            <button class="btn secondary export-button print-button" id="printBtn">
+              <svg class="icon"><use href="#i-printer" /></svg>Imprimir
+            </button>
+            <button class="btn ghost cancel-button" id="cancelBtn">Cancelar</button>
+          </div>
+          <p class="error" id="errorBox" role="alert" hidden></p>
+
+          <div class="legal-note">
+            <svg class="icon"><use href="#i-info" /></svg>
+            <p>Este documento tem validade legal em todo o território nacional. Mantenha-o seguro.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
