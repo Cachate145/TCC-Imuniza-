@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imuniza+ - Assistente Virtual Inteligente</title>
+    <link rel="stylesheet" href="chat_bot.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        <!-- Navegação Superior -->
+        <div class="navbar">
+            <a href="/dashboard/dashboard.html">
+                <div class="nav-left" id="back-btn" title="Voltar">
+                    <div class="back-icon-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="nav-title-group">
+                        <h2>Imuniza+ Assistente</h2>
+                        <span>IA Especialista em Saúde</span>
+                    </div>
+                </div>
+            </a>
+            <div class="bot-status">
+                <div class="status-dot"></div>
+                <span>Online</span>
+            </div>
+        </div>
+
+        <!-- Histórico de Mensagens -->
+        <div class="chat-messages" id="chat-messages">
+            <div class="message-wrapper bot">
+                <div class="message-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    Olá! Seja muito bem-vindo(a) ao chat inteligente do <strong>Imuniza+</strong>. Estou aqui para tirar qualquer dúvida sobre agendamentos, carteira de vacinação, perfis familiares e postos de saúde!<br><br>Como posso ajudar você hoje?
+                    <span class="message-time">Agora</span>
+                </div>
+            </div>
+            
+            <!-- Indicador de Digitação -->
+            <div class="typing-wrapper" id="typing-indicator">
+                <div class="message-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="typing-bubble">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sugestões Rápidas -->
+        <div class="quick-suggestions">
+            <button class="suggestion-chip" onclick="sendSuggestion('O que é o Imuniza+?')"><i class="fa-solid fa-circle-info"></i> O que é o Imuniza+?</button>
+            <button class="suggestion-chip" onclick="sendSuggestion('Como agendar uma vacina?')"><i class="fa-solid fa-calendar-plus"></i> Como agendar vacina?</button>
+            <button class="suggestion-chip" onclick="sendSuggestion('Onde vejo minha carteira?')"><i class="fa-solid fa-id-card"></i> Ver minha carteira</button>
+            <button class="suggestion-chip" onclick="sendSuggestion('Como adiciono um dependente?')"><i class="fa-solid fa-user-plus"></i> Adicionar dependente</button>
+            <button class="suggestion-chip" onclick="sendSuggestion('Meus dados estão seguros?')"><i class="fa-solid fa-shield-halved"></i> Segurança e dados</button>
+            <button class="suggestion-chip" onclick="sendSuggestion('Como encontro postos de saúde?')"><i class="fa-solid fa-location-dot"></i> Postos próximos</button>
+        </div>
+
+        <!-- Entrada de Texto -->
+        <div class="chat-input-area">
+            <div class="chat-input-wrapper">
+                <input type="text" id="user-input" class="chat-input" placeholder="Digite sua dúvida sobre o Imuniza+..." autocomplete="off">
+            </div>
+            <button id="send-btn" class="send-btn" title="Enviar mensagem">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript com Algoritmo de Similaridade (Fuzzy) -->
+    <script src="chat_bot.js"></script>
+</body>
+</html>
